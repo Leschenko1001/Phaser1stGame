@@ -1,4 +1,3 @@
-
 var config = {
     type: Phaser.AUTO,
     width: 800,
@@ -49,7 +48,7 @@ function create() {
     platforms.create(600, 400, 'ground');
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
-   
+    
     player = this.physics.add.sprite(100, 450, 'dude');
 
     player.setBounce(0.2);
@@ -97,7 +96,7 @@ function create() {
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
 
-   
+    
     this.physics.add.overlap(player, stars, collectStar, null, this);
     this.physics.add.collider(player, bombs, hitBomb, null, this);
 }
@@ -108,7 +107,7 @@ function update()
     {
         return;
     }
-
+    
     if (cursors.left.isDown) 
     {
         player.setVelocityX(-160);
